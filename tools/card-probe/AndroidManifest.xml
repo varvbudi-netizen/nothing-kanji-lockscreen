@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Отдельное исследовательское приложение привязывается к установленной службе карточек. -->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="ru.local.nihongo.probe"
+    android:versionCode="4"
+    android:versionName="0.4">
+
+    <uses-sdk android:minSdkVersion="26" android:targetSdkVersion="35" />
+    <uses-permission android:name="com.nothing.permission.BIND_CARD_SERVICE" />
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+
+    <queries>
+        <package android:name="com.nothing.cardservice" />
+        <package android:name="com.nothing.hearthstone" />
+    </queries>
+
+    <application
+        android:label="Японские слова"
+        android:icon="@drawable/ic_launcher"
+        android:debuggable="true"
+        android:allowBackup="false"
+        android:theme="@android:style/Theme.Material.NoActionBar">
+        <service android:name=".WakeService" android:exported="false"
+            android:stopWithTask="false" android:foregroundServiceType="specialUse">
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="Обновление иероглифа карточки при включении экрана" />
+        </service>
+        <receiver android:name=".WakeBootReceiver" android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+        <activity
+            android:name=".ProbeActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity android:name=".ThemeActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

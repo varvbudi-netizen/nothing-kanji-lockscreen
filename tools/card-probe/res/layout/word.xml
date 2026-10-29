@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Прозрачный макет проверяет отображение японского текста внутри штатной карточки. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:padding="10dp"
+    android:background="@android:color/transparent"
+    android:theme="@android:style/Theme.Material.NoActionBar">
+
+    <TextView
+        android:id="@+id/kanji"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-light"
+        android:text="日"
+        android:textColor="#FFFFFF"
+        android:textSize="56sp"
+        android:includeFontPadding="false" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/reading"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="7sp"
+            android:autoSizeMaxTextSize="16sp"
+            android:autoSizeStepGranularity="1sp"
+            android:maxLines="2"
+            android:text="ひ · hi"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp" />
+        <TextView
+            android:id="@+id/meaning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="солнце · день"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp" />
+    </LinearLayout>
+</LinearLayout>

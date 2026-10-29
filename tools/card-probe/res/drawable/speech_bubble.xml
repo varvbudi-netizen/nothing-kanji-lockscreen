@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Хвост реплики указывает на голову персонажа; слова остаются отдельными живыми элементами. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="168dp"
+    android:height="96dp"
+    android:viewportWidth="168"
+    android:viewportHeight="96">
+    <path
+        android:fillColor="#FFF7E9"
+        android:strokeColor="#172330"
+        android:strokeWidth="1.5"
+        android:strokeLineJoin="round"
+        android:pathData="M18,2 L150,2 Q166,2 166,18 L166,62 Q166,78 150,78 L122,78 L108,94 L102,78 L18,78 Q2,78 2,62 L2,18 Q2,2 18,2 Z" />
+</vector>

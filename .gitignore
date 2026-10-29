@@ -1,0 +1,39 @@
+# Локальные сборки и инструменты
+.local-signing/
+signing/
+scratch/
+output/
+build/
+**/build/
+.gradle/
+.idea/
+.vscode/
+.serena/
+.codegraph/
+graphify-out/
+*.iml
+local.properties
+**/local.properties
+
+# Ключи, конфигурация и данные сеансов
+*.key
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.env
+.env
+.env.*
+*session*
+*.sqlite
+*.sqlite3
+*.db
+*local-settings*
+*.apk
+
+# Личные исходные материалы и локальные инструкции
+assets/references/
+assets/wallpapers/*backup*
+*PROMPT*
+AGENTS.md
